@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ExampleInteraction />
       </header>
     </div>
   );
+
+}
+
+function ExampleInteraction() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  const JavascriptExpression='title'
+
+  if (count > 0) {
+    return (
+    <div>
+      <p className={JavascriptExpression}>I know you love Christian and Oliver</p>
+      <button className="hotbutton2" onClick={handleClick}>
+        Application Lab
+      </button>
+    </div>);
+  } else {
+    return (
+      <div>
+        <p className={JavascriptExpression}>choose which class you like the most</p>
+        <button className="hotbutton1" onClick={handleClick}>
+          Application Lab
+      </button>
+        <button className="hotbutton1" onClick={handleClick}>
+          Communication Lab
+      </button>
+        <button className="hotbutton1" onClick={handleClick}>
+          Interaction Lab
+      </button>
+      </div>
+    );
+  }
 }
 
 export default App;
